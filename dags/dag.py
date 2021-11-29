@@ -18,7 +18,7 @@ args = {
 	'owner': 'airflow'
 }
 
-dag = DAG('Test54', default_args=args, description='Simple Example DAG',
+dag = DAG('HubwayData', default_args=args, description='Simple Example DAG',
 schedule_interval='56 18 * * *',
 start_date=datetime(2019, 10, 16), catchup=False, max_active_runs=1)
 
