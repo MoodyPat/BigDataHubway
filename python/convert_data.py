@@ -47,12 +47,21 @@ def haversine(lat1, lon1, lat2, lon2):
 	except:
 		return '-1'
 	
-def timeslot(st):
+def timeslotOld(st):
 	try:
 		return str(st.hour // 6)
 	except:
 		return '-1'
 		
+
+def timeslot(st):
+	slots = ['0-6 Uhr', '6-12 Uhr', '12-18 Uhr', '18-24 Uhr']
+	slot = st.hour // 6
+	slotname = slots[slot]
+	try:
+		return slot
+	except:
+		return '0'
 
 udf_haversine = F.udf(haversine)
 udf_timeslot = F.udf(timeslot)
